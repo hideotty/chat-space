@@ -1,0 +1,165 @@
+// Place all the styles related to the groups controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.contents{
+  width: 100%;
+  position: relative;
+}
+.left{
+  min-height: 100vh;
+  background-color: #2f3e51;
+  width: 300px;
+  position: absolute;
+  left: 0px;
+  color: #FFFFFF ;
+  }
+
+.user{
+  padding: 0px 20px 0 20px;
+  line-height: 98px;
+  background-color: #253141;
+  &__name{
+      font-size : 16px;
+      font-weight: bold;
+  }
+
+  &__icon{
+    float: right;
+    color: white;
+    line-height: 10px;
+    height: 20px;
+    width: 40px;
+    position: absolute;
+    top: 40px;
+    right: 20px;
+     &--left{
+      float: left;
+      i{
+        color: white;
+      }
+    }
+    &--right{
+      float: right;
+      i{
+        color: white;
+      }
+    }
+  }
+}
+
+  .group1{
+    &__name{
+      font-size: 15px;
+      padding: 20px 0px 5px 20px;
+    }
+    &__massage{
+      font-size: 11px;
+      padding: 0px 20px 0px;
+    }
+  }
+  .group2{
+    &__name{
+      font-size: 15px;
+      padding: 40px 0px 5px 20px;
+    }
+    &__massage{
+      font-size: 11px;
+      padding: 0px 20px 0px;
+    }
+  }
+
+.right{
+  width: calc(100vw - 300px);
+  position: absolute;
+  left: 300px;
+  min-height: 100vh;
+}
+
+  .groupinfo{
+    padding: 35px 40px 0 40px;
+    border-bottom: 1px solid #eeeeee;
+    &__name{
+      font-size: 20px;
+      color: #333333;
+
+    }
+    &__member{
+      padding-top: 15px;
+      font-size: 12px;
+      color: #999999;
+      // float: left;
+    }
+    &__btn{
+      border: solid 1px #38AEF0;
+      color: #38AEF0;
+      padding: 0px 20px;
+      line-height: 40px;
+      position: absolute;
+      top: 28px;
+      right: 40px;
+      // float:right;
+    }
+  }
+
+  .message{
+    padding: 46px 0px 40px 40px;
+    min-height: calc(100vh - 274px);
+    &__user{
+      font-size: 16px;
+      font-weight: bold;
+      color: #434A54;
+    }
+    &__text{
+      padding-top: 10px;
+      font-size: 14px;
+      color: #434A54;
+    }
+    &__date{
+      font-size: 12px;
+      color: #999999;
+      font-weight: normal;
+      padding-left: 10px;
+    }
+  }
+
+  .form{
+    height: 50px;
+    background-color: rgba(128, 128, 128, 0.25);
+    padding: 20px ;
+
+    &__post{
+        line-height: 50px;
+        font-size: 16px;
+        color: #434A54;
+        margin: 0px 15px 20px 40px;
+        background-color: white;
+        padding-left: 10px;
+        position: absolute;
+        min-width: calc(100% - 225px);
+      &--text{
+        float:left;
+      }
+      &--img{
+        float: right;
+        //width:30px;
+        color: black;
+        padding-right: 10px;
+      }
+    }
+    &__send{
+      background-color: #38AEF0;
+      color: white;
+      font-style: bold;
+      line-height: 50px;
+      text-align: center;
+      width: 80px;
+      right: 40px;
+      float: right;
+      margin-right:40px;
+    }
+  }
+  .clearfix{
+    clear: both;
+    display: block;
+    content: " ";
+  }
