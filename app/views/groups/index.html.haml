@@ -5,7 +5,7 @@
         Noguchi Naganori
       .user__icon
         .user__icon--left
-          =link_to fa_icon("pencil-square-o")
+          =link_to fa_icon("pencil-square-o"),new_group_path(current_user)
         .user__icon--right
           =link_to fa_icon("cog"),edit_user_path(current_user)
     .group1
@@ -26,7 +26,7 @@
       .groupinfo__member
         member1,menber2
       .groupinfo__btn
-        Edit
+        =link_to "Edit",edit_group_path(current_user)
     .message
       .message__user
         member
