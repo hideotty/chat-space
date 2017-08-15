@@ -1,0 +1,29 @@
+.form
+  %h1 新規チャットグループ
+  = form_for @group do |f|
+    .form__errors
+      %h2
+        1件のエラーが発生しました。
+        %ul
+          %li エラーです
+      .form__field.clearfix
+        .form__field--left
+          %label.form__label{:for => "chat_group_name"}
+          / =f.label :for, "チャットメンバー", {class: "chat-group-name"}
+        .form__field--right
+      .form__field.clearfix
+        .form__field--left
+          = f.label :name, "グループ名", {class: 'form__label'}
+        .form__field--right
+          = f.text_field :name, {class: "form__input", placeholder: "グループ名を入力してください"}
+      .form__field.clerfix
+        .form__field--left
+          %label.form__label{:for => "chat_group_name"}チャットメンバー
+        .form__field--right
+          .check_box
+            = f.collection_check_boxes(:user_ids, User.all, :id, :name)
+      .form__field.clerfix
+        .form__field--left
+        .form__field--right
+          / %input.form__action-btn{"data-disable-with" => "Save", :name => "commit", :type => "submit", :value => "Save"}/
+          = f.submit '登録する', class: "form__action-btn"
