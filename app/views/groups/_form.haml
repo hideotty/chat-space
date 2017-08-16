@@ -10,7 +10,7 @@
         = f.text_field :name, {class: "form__input", placeholder: "グループ名を入力してください"}
     .form__field.clerfix
       .form__field--left
-        %label.form__label{:for => "chat_group_name"}チャットメンバー
+        =f.label.form :name,"チャットメンバー"{class: "chat_group_name"}
       .form__field--right
         .check_box
           = f.collection_check_boxes(:user_ids, User.all, :id, :name)
