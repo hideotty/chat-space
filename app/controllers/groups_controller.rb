@@ -1,6 +1,8 @@
 class GroupsController < ApplicationController
+  # before_action :set_group, only:[:index]
   def index
     @groups = Group.all
+
   end
 
   def new
@@ -29,4 +31,8 @@ class GroupsController < ApplicationController
   def group_params
     params.require(:group).permit(:name)
   end
+
+  # def set_group
+  #   @group = Group.find(params[:id])
+  # end
 end
