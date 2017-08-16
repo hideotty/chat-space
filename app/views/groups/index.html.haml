@@ -8,17 +8,13 @@
           =link_to fa_icon("pencil-square-o"),new_group_path
         .user__icon--right
           =link_to fa_icon("cog"),edit_user_path(current_user)
-    .group1
-      .group1__name
-        aaaaa
-      .group1__massage
-        なし
-    .group2
-      .group2__name
-        baaaaa
-      .group2__massage
-        (•＿•)
-
+    .group
+      - @groups.each do |group|
+        .group1
+          .group1__name
+            =group[:name]
+          .group1__massage
+            なし
   .right
     .groupinfo
       .groupinfo__name
@@ -34,15 +30,11 @@
           2017/08/10 00:00:00
       .message__text
         暇暇
-
     .form
       .form__post
         .form__post--text
           type text
         .form__post--img
           =link_to fa_icon("image fa-fw")
-
-
-
-      .form__send
-        Send
+        .form__send
+          "sss"
