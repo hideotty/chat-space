@@ -2,10 +2,6 @@
   .form__errors
     %h2
       = "#{@group.errors.count}件のエラーがあります。"
-    .form__field.clearfix
-      .form__field--left
-        %label.form__label{:for => "chat_group_name"}
-        / =f.label :for, "チャットメンバー", {class: "chat-group-name"}
       .form__field--right
     .form__field.clearfix
       .form__field--left
