@@ -23,7 +23,13 @@ class GroupsController < ApplicationController
   end
 
   def update
-
+    @group = Group.find(params[:id])
+    if @group.update(group_params)
+      redirect_to root_path, notice: "グループ情報を更新しました"
+    else
+      flash.now[:alart] = "更新に失敗しました"
+      render :edit
+    end
   end
 
   private
