@@ -47,34 +47,22 @@
   }
 }
 
-  .group1{
-    &__name{
-      font-size: 15px;
-      padding: 20px 0px 5px 20px;
-    }
-    &__massage{
-      font-size: 11px;
-      padding: 0px 20px 0px;
-    }
+.group{
+  &__name{
+    font-size: 15px;
+    padding: 20px 0px 5px 20px;
   }
-  .group2{
-    &__name{
-      font-size: 15px;
-      padding: 40px 0px 5px 20px;
-    }
-    &__massage{
-      font-size: 11px;
-      padding: 0px 20px 0px;
-    }
-  }
+  &__massage{
+    font-size: 11px;
+    padding: 0px 20px 0px;
+   }
+}
 
 .right{
   width: calc(100vw - 300px);
   position: absolute;
   left: 300px;
   min-height: 100vh;
-}
-
   .groupinfo{
     padding: 35px 40px 0 40px;
     border-bottom: 1px solid #eeeeee;
@@ -103,7 +91,8 @@
 
   .message{
     padding: 46px 0px 40px 40px;
-    min-height: calc(100vh - 274px);
+    min-height: calc(100vh - 275px);
+    overflow-y: scroll;
     &__user{
       font-size: 16px;
       font-weight: bold;
@@ -122,20 +111,19 @@
     }
   }
 
-  .form{
-    height: 50px;
-    background-color: rgba(128, 128, 128, 0.25);
-    padding: 20px ;
-
+  .postform{
+    background-color: #DDDDDD;
+    box-sizing: border-box;
+    height: 90px;
+    padding: 20px 50px 20px 40px;
     &__post{
         line-height: 50px;
         font-size: 16px;
         color: #434A54;
-        margin: 0px 15px 20px 40px;
         background-color: white;
         padding-left: 10px;
         position: absolute;
-        min-width: calc(100% - 225px);
+        min-width: calc(100% - 195px);
       &--text{
         float:left;
       }
@@ -149,15 +137,15 @@
     &__send{
       background-color: #38AEF0;
       color: white;
-      font-style: bold;
       line-height: 50px;
       text-align: center;
       width: 80px;
       right: 40px;
       float: right;
-      margin-right:40px;
+      margin-left: 15px;
     }
   }
+}
   .clearfix{
     clear: both;
     display: block;

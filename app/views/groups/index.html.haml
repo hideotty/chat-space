@@ -10,11 +10,10 @@
           =link_to fa_icon("cog"),edit_user_path(current_user)
     .group
       - @groups.each do |group|
-        .group1
-          .group1__name
-            =group[:name]
-          .group1__massage
-            なし
+        .group__name
+          =group[:name]
+        .group__massage
+          なし
   .right
     .groupinfo
       .groupinfo__name
@@ -22,7 +21,7 @@
       .groupinfo__member
         member1,menber2
       .groupinfo__btn
-        =link_to "Edit",edit_group_path(1)
+        = link_to "Edit", edit_group_path(1)
     .message
       .message__user
         member
@@ -30,11 +29,11 @@
           2017/08/10 00:00:00
       .message__text
         暇暇
-    .form
-      .form__post
-        .form__post--text
+    .postform
+      .postform__post
+        .postform__post--text
           type text
-        .form__post--img
-          =link_to fa_icon("image fa-fw")
-        .form__send
-          "sss"
+        .postform__post--img
+          = link_to fa_icon("image fa-fw")
+      .postform__send
+        Send
