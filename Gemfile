@@ -58,3 +58,4 @@ gem 'devise'
 gem 'pry-rails'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'rails-i18n', '~> 5.0.0' # For 5.0.x and 5.1.x
