@@ -48,13 +48,16 @@
 }
 
 .group{
+
   &__name{
     font-size: 15px;
     padding: 20px 0px 5px 20px;
+    color: white;
   }
   &__massage{
     font-size: 11px;
     padding: 0px 20px 0px;
+    color: white;
    }
 }
 
@@ -85,7 +88,6 @@
       position: absolute;
       top: 28px;
       right: 40px;
-      // float:right;
     }
   }
 
@@ -126,13 +128,20 @@
         min-width: calc(100% - 195px);
       &--text{
         float:left;
+        height: 50px;
+        width: calc(100% - 140px);
+        padding-left: 10px;
       }
-      &--img{
-        float: right;
+        &--img{
+          float: right;
         //width:30px;
         color: black;
         padding-right: 10px;
-      }
+        line-height: 50px;
+        border-width: 2px;
+        background-color: white;
+        float: left;
+        }
     }
     &__send{
       background-color: #38AEF0;
@@ -141,9 +150,11 @@
       text-align: center;
       width: 80px;
       right: 40px;
-      float: right;
       margin-left: 15px;
     }
+  }
+  input[type="text"], [type="submit"]{
+    border: none;
   }
 }
   .clearfix{
