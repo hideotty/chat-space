@@ -1,0 +1,15 @@
+.user
+  .user__name
+    Noguchi Naganori
+  .user__icon
+    .user__icon--left
+      =link_to fa_icon("pencil-square-o"),new_group_path
+    .user__icon--right
+      =link_to fa_icon("cog"),edit_user_path(current_user)
+.group
+  - @groups.each do |group|
+    = link_to group_messages_path(group.id) do
+      .group__name
+        =group[:name]
+      .group__massage
+        なし

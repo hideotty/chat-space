@@ -2,6 +2,10 @@
   .form__errors
     %h2
       = "#{@group.errors.count}件のエラーがあります。"
+      - @group.errors.messages.each do |error|
+        %li
+          =error
+
       .form__field--right
     .form__field.clearfix
       .form__field--left
@@ -10,7 +14,7 @@
         = f.text_field :name, {class: "form__input", placeholder: "グループ名を入力してください"}
     .form__field.clerfix
       .form__field--left
-        =f.label.form :name,"チャットメンバー"{class: "chat_group_name"}
+        = f.label :name, "チャットメンバー", {class: "chat_group_name"}
       .form__field--right
         .check_box
           = f.collection_check_boxes(:user_ids, User.all, :id, :name)
