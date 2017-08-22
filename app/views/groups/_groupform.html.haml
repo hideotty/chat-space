@@ -2,7 +2,7 @@
   .form__errors
     %h2
       = "#{@group.errors.count}件のエラーがあります。"
-      -@group.errors.messages.each do |error|
+      - @group.errors.messages.each do |error|
         %li
           =error
 
