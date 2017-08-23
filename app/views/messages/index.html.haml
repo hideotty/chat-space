@@ -1,20 +1,18 @@
 .left
-  = render 'groups/groupindex'
+  = render partial: 'groups/groupindex', locals:{messages: @group.messages}
 .right
   .groupinfo
     .groupinfo__name
       = @group.name
     .groupinfo__member
-      member1,menber2
+      - @members.each do |member|
+        = member.name
     .groupinfo__btn
       = link_to "Edit", edit_group_path(@group.id)
+
   .message
-    .message__user
-      member1
-      %span.message__date
-        2017/08/10 00:00:00
-    .message__text
-      暇暇
+    = render 'messages/messages'
+
   .postform
     = form_for [@group,@message] do |f|
       = f.text_field :content, class: "postform__post--text", placeholder: "type massages"
