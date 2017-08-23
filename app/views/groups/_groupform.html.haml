@@ -1,8 +1,9 @@
 = form_for @group do |f|
   .form__errors
     %h2
-      = "#{@group.errors.count}件のエラーがあります。"
-      - @group.errors.messages.each do |error|
+    -if @group.errors.any?
+      "#{@group.errors.count}件のエラーがあります。"
+      - @group.errors.full_messages.each do |error|
         %li
           =error
 

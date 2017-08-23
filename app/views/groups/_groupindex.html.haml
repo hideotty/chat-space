@@ -1,6 +1,6 @@
 .user
   .user__name
-    Noguchi Naganori
+    =current_user.name
   .user__icon
     .user__icon--left
       =link_to fa_icon("pencil-square-o"),new_group_path
@@ -10,6 +10,11 @@
   - @groups.each do |group|
     = link_to group_messages_path(group.id) do
       .group__name
-        =group[:name]
+        = group[:name]
       .group__massage
-        なし
+        - if group.messages.last.try(:img).present?
+          %p "画像"
+        - elsif group.messages.last.try(:content)
+          = group.messages.last.content
+        - else
+          %p "メッセージを入力してください"
