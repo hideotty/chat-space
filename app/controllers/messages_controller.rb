@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
   def create
     @group = Group.find(params[:group_id])
     @groups = Group.all
-    @message = Message.new(message_params)
+    @message = current_user.messages.new(message_params)
     if @message.save
       redirect_to group_messages_path, notice: "グループを作成しました"
     else
@@ -20,6 +20,6 @@ class MessagesController < ApplicationController
 
 private
   def message_params
-    params.require(:message).permit(:content, :img).merge(user_id: current_user.id, group_id: params[:group_id])
+    params.require(:message).permit(:content, :img).merge(group_id: params[:group_id])
   end
 end

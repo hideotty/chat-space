@@ -6,5 +6,5 @@ class User < ApplicationRecord
   validates :name, presence: true
   has_many :members
   has_many :groups, through: :members
-  has_many :massages
+  has_many :messages
 end
