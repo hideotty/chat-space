@@ -6,12 +6,13 @@
   position: relative;
 }
 .left{
-  min-height: 100vh;
+  height: 100vh;
   background-color: #2f3e51;
   width: 300px;
   position: absolute;
   left: 0px;
   color: #FFFFFF ;
+  overflow-y: scroll;
   }
 
 .user{
@@ -93,7 +94,7 @@
 
   .message{
     padding: 46px 0px 40px 40px;
-    min-height: calc(100vh - 275px);
+    height: calc(100vh - 275px);
     overflow-y: scroll;
     &__user{
       font-size: 16px;
