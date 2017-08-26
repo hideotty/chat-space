@@ -18,7 +18,7 @@
           = date(message)
       .message__text
         = message.content
-        = image_tag message.img_url if message.img.present?
+        = image_tag message.img.url if message.img.present?
 
   .postform
     = form_for [@group,@message] do |f|
