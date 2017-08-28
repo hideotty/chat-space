@@ -4,7 +4,6 @@ class MessagesController < ApplicationController
     @groups = current_user.groups
     @message = Message.new
     @members = @group.users
-    # binding.pry
   end
 
   def create
@@ -13,7 +12,7 @@ class MessagesController < ApplicationController
     @groups = Group.all
     @message = current_user.messages.new(message_params)
     if @message.save
-      redirect_to group_messages_path(params[:group_id]), notice: "メッセージを投稿しました"
+      redirect_to group_messages_path, notice: "メッセージを投稿しました"
     else
       flash.now[:alart] = "メッセージを入力してください"
       render :index
