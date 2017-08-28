@@ -22,20 +22,19 @@ require 'rails_helper'
         it'is invalid without content and img'do
           message = build(:message, content:'',img:'')
           message.valid?
-            binding.pry
           expect(message.errors[:content_or_img]).to include("を入力してください")
         end
         it'is invalid without a group_id'do
           message = build(:message, group_id:'')
           message.valid?
-          expect(message.errors[:group_id]).to include("を入力してください")
+          expect(message.errors[:group]).to include("を入力してください")
         end
           it'is invalid without a user_id'do
             message = build(:message, user_id: '')
             message.valid?
-            expect(message.errors[:user_id]).to include("を入力してください")
+            expect(message.errors[:user]).to include("を入力してください")
         end
       end
     end
   end
-end
+
