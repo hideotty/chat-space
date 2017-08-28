@@ -14,3 +14,5 @@
 /database.rules.json
 /firebase.json
 public/uploads/*
+
+vendor/bundle/*
