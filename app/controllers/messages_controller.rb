@@ -1,14 +1,14 @@
 class MessagesController < ApplicationController
+
+  before_action @group = Group.find(params[:group_id])
+
   def index
-    @group = Group.find(params[:group_id])
     @groups = current_user.groups
     @message = Message.new
     @members = @group.users
   end
 
   def create
-       # binding.pry
-    @group = Group.find(params[:group_id])
     @groups = Group.all
     @message = current_user.messages.new(message_params)
     if @message.save
