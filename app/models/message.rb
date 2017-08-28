@@ -7,6 +7,6 @@ class Message < ApplicationRecord
 
   private
   def content_or_img
-    content.present? || img.present?
+    content.presence || img.presence
   end
 end
