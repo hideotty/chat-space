@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
 
-  before_action @group = Group.find(params[:group_id])
+  before_action group_params
 
   def index
     @groups = current_user.groups
@@ -22,5 +22,8 @@ class MessagesController < ApplicationController
 private
   def message_params
     params.require(:message).permit(:content, :img).merge(group_id: params[:group_id])
+  end
+  def group_params
+    @group = Group.find(params[:group_id])
   end
 end
