@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
 
-  before_action group_params
+  before_action :group_params
 
   def index
     @groups = current_user.groups
@@ -9,7 +9,6 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @groups = Group.all
     @message = current_user.messages.new(message_params)
     if @message.save
       redirect_to group_messages_path, notice: "メッセージを投稿しました"
