@@ -40,6 +40,7 @@ group :development, :test do
   gem 'rspec-rails','~>3.5'
   gem 'factory_girl_rails', "~> 4.4.1"
   gem 'byebug', platform: :mri
+  gem 'faker'
 end
 
 group :development do
@@ -52,7 +53,6 @@ group :development do
 end
 
 group :test do
-  gem 'faker'
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
@@ -64,3 +64,4 @@ gem 'pry-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'rails-i18n', '~> 5.0.0' # For 5.0.x and 5.1.x
+gem 'rails-controller-testing'
