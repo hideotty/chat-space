@@ -1,0 +1,11 @@
+.group
+  = link_to group_messages_path(group) do
+    .group__name
+      = group[:name]
+    .group__massage
+      - if group.messages.last.try(:img).present?
+        %p "画像"
+      - elsif group.messages.last.try(:content)
+        = group.messages.last.content
+      - else
+        %p "メッセージを入力してください"

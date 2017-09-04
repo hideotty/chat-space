@@ -1,5 +1,13 @@
 .left
-  = render partial: 'groups/groupindex', locals: { messages: @group.messages }
+  .user
+    .user__name
+      =current_user.name
+  .user__icon
+    .user__icon--left
+      =link_to fa_icon("pencil-square-o"),new_group_path
+    .user__icon--right
+      =link_to fa_icon("cog"),edit_user_path(current_user)
+  = render partial: "groups/group", collection: @groups
 .right
   .groupinfo
     .groupinfo__name
