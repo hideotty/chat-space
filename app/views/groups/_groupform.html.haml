@@ -15,11 +15,22 @@
         = f.text_field :name, {class: "form__input", placeholder: "グループ名を入力してください"}
     .form__field.clerfix
       .form__field--left
-        = f.label :name, "チャットメンバー", {class: "chat_group_name"}
+        チャットメンバーを追加
+        = label :search, "",{for: "chat_group_チャットメンバーを追加"}
+      .form__field--right.js_incremental
+        .form__search.clearfix
+          %input.form__input#search_{ placeholder: "追加したいユーザー名を入力してください", type: "text"}
+    .form__field.clerfix
+      .form__field--left
+        チャットメンバー
       .form__field--right
-        .check_box
-          = f.collection_check_boxes(:user_ids, User.all, :id, :name)
+        .form__field--righttext
+          %p#user-search-result
+            = current_user.name
     .form__field.clerfix
       .form__field--left
       .form__field--right
         = f.submit '登録する', class: "form__action-btn"
+
+
+
