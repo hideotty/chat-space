@@ -38,7 +38,7 @@ var current_user = $(".js_incremental");
 
   $("#search_").on("keyup", function(){
     var input = $("#search_").val();
-    $("#candidate-user-name").remove();
+    $(".chat-group-user").remove();
     if (input == ""){
       $("#search_").empty();
     }
