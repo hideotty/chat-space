@@ -3,8 +3,8 @@ class UsersController < ApplicationController
 def index
   @users = User.where('name LIKE(?)', "#{params[:keyword]}%")
   respond_to do |format|
-        format.html { redirect_to users_path, notice: "メンバーを追加しました" }
-        format.json
+    format.html { redirect_to users_path, notice: "メンバーを追加しました" }
+    format.json
   end
 end
 
