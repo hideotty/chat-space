@@ -61,19 +61,18 @@ var current_user = $(".js_incremental");
         }
       })
       .fail(function(){
-        alert('ユーザーの追加に失敗しました')
+        alert('ユーザーの追加に失敗しました');
       })
     }
   })
 
   $(".form").on('click', ".user-search-add", function(){
-     var id = $(this).data('user-id')
-     var name = $(this).data('user-name')
+     var id = $(this).data('user-id');
+     var name = $(this).data('user-name');
     $(this).parent().remove();
     addUsername(id,name)
   })
   $(".form").on("click", ".user-search-remove", function () {
     $(this).parent().remove();
-
   })
 });
