@@ -4,7 +4,7 @@ var search_list = $("#user-search-result");
 var current_user = $(".js_incremental");
 
   function appendUsers(user) {
-    var html = `<div class="chat-group-user clearfix">
+    var html = `<div class="chat-group-user clearfix", id ="candidate-user-name">
                   <p class="chat-group-user__name">
                     ${ user.name }
                   </p>
@@ -16,7 +16,7 @@ var current_user = $(".js_incremental");
   }
 
   function appendNoUsers(user) {
-    var html = `<div class="chat-group-user clearfix">
+    var html = `<div class="chat-group-user clearfix", id ="candidate-user-name">
                   <p class="chat-group-user__name">
                     一致するユーザーがいません。
                   </p>`
@@ -38,14 +38,18 @@ var current_user = $(".js_incremental");
 
   $("#search_").on("keyup", function(){
     var input = $("#search_").val();
-    $.ajax({
-      url: '/users',
-      type: "GET",
-      data: { keyword: input },
-      dataType: 'json'
-    })
-    .done(function(users){
-      $(".chat-group-user").remove();
+    $("#candidate-user-name").remove();
+    if (input == ""){
+      $("#search_").empty();
+    }
+    else{
+      $.ajax({
+        url: '/users',
+        type: "GET",
+        data: { keyword: input },
+        dataType: 'json'
+      })
+      .done(function(users){
         if (users.length !== 0) {
           users.forEach(function(user){
           var html = appendUsers(user);
@@ -55,10 +59,11 @@ var current_user = $(".js_incremental");
           appendNoUsers
           ("一致するUserはいません");
         }
-    })
-    .fail(function(){
-      alert('ユーザーの追加に失敗しました')
-    })
+      })
+      .fail(function(){
+        alert('ユーザーの追加に失敗しました')
+      })
+    }
   })
 
   $(".form").on('click', ".user-search-add", function(){
