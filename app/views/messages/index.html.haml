@@ -18,15 +18,17 @@
     .groupinfo__btn
       = link_to "Edit", edit_group_path(@group)
 
-  .message
+  .message.data-id
     - @group.messages.each do |message|
-      .message__user
-        = message.user.name
-        %span.message__date
-          = date(message)
-      .message__text
-        = message.content
-        = image_tag message.img.url if message.img.present?
+      .message__detail{ 'data-id': message.id }
+        .message__user
+          = message.user.name
+          %span.message__date
+            = date(message)
+        .message__text
+          = message.content
+          = image_tag message.img.url if message.img.present?
+
 
   .postform
     = form_for [@group,@message] do |f|
