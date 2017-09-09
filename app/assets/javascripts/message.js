@@ -52,7 +52,7 @@ $(function(){
   })
 
   $(function(){
-    setInterval(update, 10000);
+    setInterval(update, 5000);
   });
   function update(){
     var message_id = $('.message__detail').last().data('id');
